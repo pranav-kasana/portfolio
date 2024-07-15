@@ -185,7 +185,7 @@ article {
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  transform: scale(.75)
+  transform: scale(0.75);
 }
 
 .icon-box {
