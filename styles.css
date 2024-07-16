@@ -444,11 +444,6 @@ main {
   margin-bottom: 2px;
 }
 
-.contact-info :is(.contact-link, time, address) {
-  color: var(--white-2);
-  font-size: var(--fs-7);
-}
-
 .contact-info address {
   font-style: normal;
 }
@@ -2004,6 +1999,8 @@ textarea.form-input::-webkit-resizer {
   }
 
   .contact-info :is(.contact-link, time, address) {
+    color: var(--white-2);
+    font-size: var(--fs-7);
     --fs-7: 14px;
     font-weight: var(--fw-300);
   }
