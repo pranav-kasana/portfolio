@@ -1,24 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pranav Reddy Kasana — Software Engineer with expertise in web development, cloud computing, and machine learning. Based in Hyderabad, Telangana."
+    />
+
+    <!-- FIX: theme-color for mobile browser chrome -->
+    <meta name="theme-color" content="hsl(0, 0%, 7%)" />
+
+    <!-- Open Graph / social sharing -->
+    <meta
+      property="og:title"
+      content="Pranav Reddy Kasana — Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="MS Computer Science · Azure Certified · Full-Stack · Based in Hyderabad, Telangana."
+    />
+    <!-- FIX: absolute URL — relative paths break all social crawlers -->
+    <meta
+      property="og:image"
+      content="https://pranav-kasana.github.io/Assets/my-avatar.jpg"
+    />
+    <meta property="og:url" content="https://pranav-kasana.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Pranav Reddy Kasana — Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="MS Computer Science · Azure Certified · Full-Stack · Based in Hyderabad, Telangana."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pranav-kasana.github.io/Assets/my-avatar.jpg"
+    />
+
+    <link rel="canonical" href="https://pranav-kasana.github.io/" />
+
+    <!-- FIX: apple-touch-icon for iOS home screen -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon.png" />
     <link
       type="image/png"
       sizes="16x16"
       rel="icon"
       href="./Assets/favicon.png"
     />
+
+    <!-- FIX: JSON-LD Person schema for Google rich results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pranav Reddy Kasana",
+        "jobTitle": "Software Engineer",
+        "email": "pranavrkasana@gmail.com",
+        "url": "https://pranav-kasana.github.io/",
+        "sameAs": [
+          "https://www.linkedin.com/in/pranavkasana/",
+          "https://github.com/pranav-kasana"
+        ]
+      }
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <title>Pranav Reddy Kasana</title>
-    <!--font-->
+
+    <!-- FIX: Non-render-blocking font loading with preload + swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
 
   <body>
@@ -30,20 +102,26 @@
               src="Assets/my-avatar.jpg"
               alt="Pranav Reddy Kasana"
               width="80"
+              height="80"
             />
           </figure>
 
           <div class="info-content">
             <h1 class="name" title="Pranav Reddy Kasana">
-              Pranav Reddy <br />
-              Kasana
+              Pranav Reddy <br />Kasana
             </h1>
             <p class="title">Software Engineer</p>
           </div>
 
-          <button class="info_more-btn" data-sidebar-btn>
+          <!-- FIX: aria-expanded + aria-label for screen readers -->
+          <button
+            class="info_more-btn"
+            data-sidebar-btn
+            aria-expanded="false"
+            aria-label="Show contact details"
+          >
             <span>Show Contacts</span>
-            <ion-icon name="chevron-down"></ion-icon>
+            <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
           </button>
         </div>
 
@@ -52,22 +130,20 @@
           <ul class="contacts-list">
             <li class="contact-item">
               <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
+                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
               </div>
-
               <div class="contact-info">
                 <p class="contact-title">Email</p>
-                <a href="mailto:pranav@example.com" class="contact-link"
-                  >pk697@njit.edu</a
+                <a href="mailto:pranavrkasana@gmail.com" class="contact-link"
+                  >pranavrkasana@gmail.com</a
                 >
               </div>
             </li>
 
             <li class="contact-item">
               <div class="icon-box">
-                <ion-icon name="calendar-outline"></ion-icon>
+                <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
               </div>
-
               <div class="contact-info">
                 <p class="contact-title">Birthday</p>
                 <time datetime="2001-09-23">September 23, 2001</time>
@@ -76,12 +152,11 @@
 
             <li class="contact-item">
               <div class="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
+                <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
               </div>
-
               <div class="contact-info">
                 <p class="contact-title">Location</p>
-                <address>Bengaluru, Karnataka</address>
+                <address>Hyderabad, Telangana</address>
               </div>
             </li>
           </ul>
@@ -90,68 +165,88 @@
 
           <ul class="social-list">
             <li class="social-item">
+              <!-- FIX: rel="noopener noreferrer" + aria-label on all social links -->
               <a
                 href="https://www.linkedin.com/in/pranavkasana/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="social-link"
+                aria-label="LinkedIn profile"
               >
-                <ion-icon name="logo-linkedin"></ion-icon>
+                <ion-icon
+                  name="logo-linkedin"
+                  aria-hidden="true"
+                  title=""
+                ></ion-icon>
               </a>
             </li>
-
             <li class="social-item">
               <a
                 href="https://github.com/pranav-kasana"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="social-link"
+                aria-label="GitHub profile"
               >
-                <ion-icon name="logo-github"></ion-icon>
+                <ion-icon
+                  name="logo-github"
+                  aria-hidden="true"
+                  title=""
+                ></ion-icon>
               </a>
             </li>
-
             <li class="social-item">
               <a
                 href="https://www.instagram.com/pranav.kasana/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="social-link"
+                aria-label="Instagram profile"
               >
-                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon
+                  name="logo-instagram"
+                  aria-hidden="true"
+                  title=""
+                ></ion-icon>
               </a>
             </li>
-
             <li class="social-item">
               <a
                 href="https://www.facebook.com/pranavreddy23/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="social-link"
+                aria-label="Facebook profile"
               >
-                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon
+                  name="logo-facebook"
+                  aria-hidden="true"
+                  title=""
+                ></ion-icon>
               </a>
             </li>
           </ul>
         </div>
+
         <div class="separator"></div>
-        <div class="share-icon"></div>
+        <div class="share-icon" aria-hidden="true"></div>
       </aside>
 
-      <!--MAIN CONTENT-->
-
       <div class="main-content">
-        <!--NAV-BAR-->
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Site navigation">
           <ul class="navbar-list">
             <li class="navbar-item">
               <button class="navbar-link active" data-nav-link>About</button>
             </li>
-
             <li class="navbar-item">
               <button class="navbar-link" data-nav-link>Resume</button>
             </li>
-
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Skills</button>
+            </li>
             <li class="navbar-item">
               <button class="navbar-link" data-nav-link>Portfolio</button>
             </li>
-
             <li class="navbar-item">
               <button class="navbar-link" data-nav-link>Contact</button>
             </li>
@@ -159,7 +254,6 @@
         </nav>
 
         <!-- ABOUT -->
-
         <article class="about active" data-page="about">
           <header>
             <h2 class="h2 article-title">About me</h2>
@@ -167,26 +261,28 @@
 
           <section class="about-text">
             <p>
-              A driven and skilled computer science graduate student from New
-              Jersey, USA, with robust technical proficiency & hands-on
-              experience, hoping to join the workforce & expand my technical
-              expertise in real-world projects and contribute effectively to
-              innovative solutions in the tech industry.
+              A driven and skilled software engineer based in Hyderabad,
+              Telangana, with a Master of Science in Computer Science from New
+              Jersey Institute of Technology. With robust technical proficiency
+              and hands-on experience, I am actively contributing to innovative
+              solutions in the tech industry and seeking impactful opportunities
+              in real-world projects.
             </p>
           </section>
 
-          <!--service-->
-
           <section class="service">
             <h3 class="h3 service-title">My Expertise</h3>
-
             <ul class="service-list">
               <li class="service-item">
-                <div class="service-icon-box"></div>
-
+                <div class="service-icon-box">
+                  <ion-icon
+                    name="code-slash-outline"
+                    aria-hidden="true"
+                    style="font-size: 28px; color: var(--orange-yellow-crayola)"
+                  ></ion-icon>
+                </div>
                 <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web design</h4>
-
+                  <h4 class="h4 service-item-title">Web Design</h4>
                   <p class="service-item-text">
                     Crafting modern, high-quality web designs with a
                     professional touch.
@@ -195,13 +291,17 @@
               </li>
 
               <li class="service-item">
-                <div class="service-icon-box"></div>
-
+                <div class="service-icon-box">
+                  <ion-icon
+                    name="git-branch-outline"
+                    aria-hidden="true"
+                    style="font-size: 28px; color: var(--orange-yellow-crayola)"
+                  ></ion-icon>
+                </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">
                     Open Source Contributions
                   </h4>
-
                   <p class="service-item-text">
                     Contributing to open-source projects and collaborating with
                     the community.
@@ -210,11 +310,17 @@
               </li>
 
               <li class="service-item">
-                <div class="service-icon-box"></div>
-
+                <div class="service-icon-box">
+                  <ion-icon
+                    name="flask-outline"
+                    aria-hidden="true"
+                    style="font-size: 28px; color: var(--orange-yellow-crayola)"
+                  ></ion-icon>
+                </div>
                 <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Research & Development</h4>
-
+                  <h4 class="h4 service-item-title">
+                    Research &amp; Development
+                  </h4>
                   <p class="service-item-text">
                     Conducting research in advanced areas of computer science.
                   </p>
@@ -222,11 +328,15 @@
               </li>
 
               <li class="service-item">
-                <div class="service-icon-box"></div>
-
+                <div class="service-icon-box">
+                  <ion-icon
+                    name="camera-outline"
+                    aria-hidden="true"
+                    style="font-size: 28px; color: var(--orange-yellow-crayola)"
+                  ></ion-icon>
+                </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">Photography</h4>
-
                   <p class="service-item-text">
                     Capturing moments and creating visual stories through
                     photography.
@@ -236,131 +346,131 @@
             </ul>
           </section>
 
-          <!-- clients -->
-
-          <section class="clients">
+          <section class="clients" aria-label="Technologies and tools">
             <h3 class="h3 clients-title">Skills</h3>
-
             <ul class="clients-list has-scrollbar">
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\html_5.png" alt="HTML5" />
-                </a>
+                <img
+                  src="./Assets/Skills/html_5.png"
+                  alt="HTML5"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\css_3.png" alt="CSS3" />
-                </a>
+                <img
+                  src="./Assets/Skills/css_3.png"
+                  alt="CSS3"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\figma.png" alt="FIGMA" />
-                </a>
+                <img
+                  src="./Assets/Skills/figma.png"
+                  alt="Figma"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\wordpress.png" alt="WORDPRESS" />
-                </a>
+                <img
+                  src="./Assets/Skills/wordpress.png"
+                  alt="WordPress"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\javascript.png" alt="JAVASCRIPT" />
-                </a>
+                <img
+                  src="./Assets/Skills/javascript.png"
+                  alt="JavaScript"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\typescript.png" alt="TYPESCRIPT" />
-                </a>
+                <img
+                  src="./Assets/Skills/typescript.png"
+                  alt="TypeScript"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\nodejs.png" alt="NODE JS" />
-                </a>
+                <img
+                  src="./Assets/Skills/nodejs.png"
+                  alt="Node.js"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\react.png" alt="REACT" />
-                </a>
+                <img
+                  src="./Assets/Skills/react.png"
+                  alt="React"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img
-                    src=".\Assets\Skills\tailwind_css.png"
-                    alt="TAILWIND CSS"
-                  />
-                </a>
+                <img
+                  src="./Assets/Skills/tailwind_css.png"
+                  alt="Tailwind CSS"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\sass.png" alt="SASS" />
-                </a>
+                <img
+                  src="./Assets/Skills/sass.png"
+                  alt="Sass"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\git.png" alt="GIT" />
-                </a>
+                <img
+                  src="./Assets/Skills/git.png"
+                  alt="Git"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img src=".\Assets\Skills\kotlin.png" alt="KOTLIN" />
-                </a>
+                <img
+                  src="./Assets/Skills/kotlin.png"
+                  alt="Kotlin"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
               <li class="clients-item">
-                <a href="#">
-                  <img
-                    src=".\Assets\Skills\android_studio.png"
-                    alt="ANDROID STUDIO"
-                  />
-                </a>
+                <img
+                  src="./Assets/Skills/android_studio.png"
+                  alt="Android Studio"
+                  loading="lazy"
+                  width="60"
+                  height="60"
+                />
               </li>
             </ul>
           </section>
-
-          <!-- testimonials modal -->
-
-          <div class="modal-container" data-modal-container>
-            <div class="overlay" data-overlay></div>
-
-            <section class="testimonials-modal">
-              <button class="modal-close-btn" data-modal-close-btn>
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-
-              <div class="modal-img-wrapper">
-                <figure class="modal-avatar-box">
-                  <img
-                    src="./assets/images/avatar-1.png"
-                    alt="Daniel lewis"
-                    width="80"
-                    data-modal-img
-                  />
-                </figure>
-
-                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
-              </div>
-
-              <div class="modal-content">
-                <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-                <time datetime="2021-06-14">14 June, 2021</time>
-
-                <div data-modal-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were
-                    very pleased with the work done. She has a lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum
-                    dolor sit amet, ullamcous cididt consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels
-                    dolore magnarels alia.
-                  </p>
-                </div>
-              </div>
-            </section>
-          </div>
         </article>
 
-        <!--Resume-->
-
+        <!-- RESUME -->
         <article class="resume" data-page="resume">
           <header>
             <h2 class="h2 article-title">Resume</h2>
@@ -369,28 +479,61 @@
           <section class="timeline">
             <div class="title-wrapper">
               <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+                <ion-icon
+                  name="briefcase-outline"
+                  aria-hidden="true"
+                ></ion-icon>
               </div>
-
               <h3 class="h3">Experience</h3>
             </div>
 
             <ol class="timeline-list">
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Spectra Solutions</h4>
-                <p class="timeline-text"><b>SWE - Intern </b></p>
-                <span>Jan 2023 - June 2023</span>
+                <h4 class="h4 timeline-item-title">Antra, Inc.</h4>
+                <span>Feb 2025 — Apr 2025</span>
+                <p class="timeline-role">Azure Data Engineer Intern</p>
+                <p class="timeline-location">
+                  <ion-icon
+                    name="location-outline"
+                    aria-hidden="true"
+                  ></ion-icon>
+                  Sterling, Virginia, United States · Remote
+                </p>
+              </li>
 
-                <p class="timeline-text"></p>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Spectra Solutions</h4>
+                <span>Jan 2023 — Jun 2023</span>
+                <p class="timeline-role">Software Engineer Intern</p>
+                <p class="timeline-location">
+                  <ion-icon
+                    name="location-outline"
+                    aria-hidden="true"
+                  ></ion-icon>
+                  Bengaluru, Karnataka, India · On-site
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">SmartInternz</h4>
+                <span>Aug 2022 — Sep 2022</span>
+                <p class="timeline-role">Intern</p>
+                <p class="timeline-location">
+                  <ion-icon
+                    name="location-outline"
+                    aria-hidden="true"
+                  ></ion-icon>
+                  Remote
+                </p>
               </li>
             </ol>
           </section>
+
           <section class="timeline">
             <div class="title-wrapper">
               <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+                <ion-icon name="book-outline" aria-hidden="true"></ion-icon>
               </div>
-
               <h3 class="h3">Education</h3>
             </div>
 
@@ -399,129 +542,178 @@
                 <h4 class="h4 timeline-item-title">
                   New Jersey Institute of Technology
                 </h4>
-
-                <span>Sep 2023 - Dec 2024</span>
-
-                <p class="timeline-text">
-                  <b>Master of Science in Computer Science</b>
+                <span>Sep 2023 — Dec 2024</span>
+                <p class="timeline-role">
+                  Master of Science in Computer Science
                 </p>
-                <p class="timeline-text">
-                  <b>Relevant coursework: </b>Data Structures and Algorithms,
-                  Operating Systems Design, Data Management Systems Design,
-                  Internet & Higher Layer Protocol, Java Programming, Cloud
-                  Computing, Artificial Intelligence, Data Analytics with R
-                  Program, Introduction to Big Data & Corporate Finance
-                </p>
+                <div class="timeline-coursework">
+                  <p class="coursework-label">Relevant Coursework</p>
+                  <div class="coursework-tags">
+                    <span class="tag">Data Structures &amp; Algorithms</span>
+                    <span class="tag">Operating Systems Design</span>
+                    <span class="tag">Data Management Systems</span>
+                    <span class="tag"
+                      >Internet &amp; Higher Layer Protocol</span
+                    >
+                    <span class="tag">Java Programming</span>
+                    <span class="tag">Cloud Computing</span>
+                    <span class="tag">Artificial Intelligence</span>
+                    <span class="tag">Data Analytics with R</span>
+                    <span class="tag">Big Data</span>
+                    <span class="tag">Corporate Finance</span>
+                  </div>
+                </div>
+                <!-- FIX: moved after coursework for correct reading/DOM order -->
+                <a
+                  href="https://www.parchment.com/lp/award/b2eac9c7-a21d-44f2-9217-948bf3e4f516"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cert-link diploma-link"
+                  aria-label="View NJIT Master's diploma on Parchment"
+                >
+                  <ion-icon
+                    name="ribbon-outline"
+                    aria-hidden="true"
+                    title=""
+                  ></ion-icon>
+                  View Official Diploma
+                </a>
               </li>
 
               <li class="timeline-item">
                 <h4 class="h4 timeline-item-title">
                   G. Pulla Reddy Engineering College
                 </h4>
-                <span>Aug 2019 - May 2023</span>
-                <p class="timeline-text">
-                  <b
-                    >Bachelor of Technology in Computer Science and
-                    Engineering</b
-                  >
+                <span>Aug 2019 — May 2023</span>
+                <p class="timeline-role">
+                  Bachelor of Technology in Computer Science and Engineering
                 </p>
               </li>
             </ol>
           </section>
+        </article>
+
+        <!-- SKILLS -->
+        <article class="skills" data-page="skills">
+          <header>
+            <h2 class="h2 article-title">Skills</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              Welcome to the Skills page! Here, you can explore the various
+              technical and professional skills I have honed over the years.
+            </p>
+          </section>
 
           <section>
             <h3 class="h3 skills-title">Certifications</h3>
-            <ol class="about-text">
-              <li
-                style="
-                  list-style-type: none;
-                  display: flex;
-                  align-items: center;
-                "
-              >
+            <ul class="about-text certifications-list">
+              <li class="certification-item">
                 <img
                   width="18"
                   height="18"
                   src="https://img.icons8.com/color/48/salesforce.png"
-                  alt="salesforce"
-                  style="margin-right: 8px"
+                  alt="Salesforce logo"
+                  loading="lazy"
                 />
                 Salesforce Certified AI Associate
               </li>
-              <li
-                style="
-                  list-style-type: none;
-                  display: flex;
-                  align-items: center;
-                "
-              >
+              <li class="certification-item">
                 <img
                   width="18"
                   height="18"
                   src="https://img.icons8.com/color/48/microsoft.png"
-                  alt="microsoft"
-                  style="margin-right: 8px"
+                  alt="Microsoft logo"
+                  loading="lazy"
                 />
-                Microsoft Certified: Azure Developer Associate
+                <a
+                  href="https://learn.microsoft.com/api/credentials/share/en-us/PranavKasana-8684/284D95D4447A1933?sharingId=7BB807DAC1033880"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cert-link"
+                  aria-label="View Microsoft Certified: Azure Developer Associate credential"
+                >
+                  Microsoft Certified: Azure Developer Associate
+                  <ion-icon
+                    name="open-outline"
+                    aria-hidden="true"
+                    title=""
+                  ></ion-icon>
+                </a>
               </li>
-              <li
-                style="
-                  list-style-type: none;
-                  display: flex;
-                  align-items: center;
-                "
-              >
+              <li class="certification-item">
                 <img
                   width="18"
                   height="18"
                   src="https://img.icons8.com/color/48/microsoft.png"
-                  alt="microsoft"
-                  style="margin-right: 8px"
+                  alt="Microsoft logo"
+                  loading="lazy"
                 />
                 Microsoft Certified: Azure Fundamentals
               </li>
-              <li
-                style="
-                  list-style-type: none;
-                  display: flex;
-                  align-items: center;
-                "
-              >
+              <li class="certification-item">
                 <img
                   width="18"
                   height="18"
                   src="https://img.icons8.com/color/48/microsoft.png"
-                  alt="microsoft"
-                  style="margin-right: 8px"
+                  alt="Microsoft logo"
+                  loading="lazy"
                 />
-                Microsoft 365 Certified: Fundamentals
+                <a
+                  href="https://learn.microsoft.com/api/credentials/share/en-us/PranavKasana-8684/E7E5297681FA63A9?sharingId=7BB807DAC1033880"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cert-link"
+                  aria-label="View Microsoft 365 Certified: Fundamentals credential"
+                >
+                  Microsoft 365 Certified: Fundamentals
+                  <ion-icon
+                    name="open-outline"
+                    aria-hidden="true"
+                    title=""
+                  ></ion-icon>
+                </a>
               </li>
-            </ol>
+            </ul>
           </section>
 
           <section class="skill">
-            <h3 class="h3 skills-title">My skills</h3>
-
+            <h3 class="h3 skills-title">My Skills</h3>
             <ul class="skills-list content-card">
               <li class="skills-item">
                 <div class="title-wrapper">
-                  <h5 class="h5">Web development</h5>
+                  <h5 class="h5">Web Development</h5>
                   <data value="80">80%</data>
                 </div>
-
                 <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 80%"></div>
+                  <div
+                    class="skill-progress-fill"
+                    style="width: 80%"
+                    role="progressbar"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="Web Development skill level 80%"
+                  ></div>
                 </div>
               </li>
 
               <li class="skills-item">
                 <div class="title-wrapper">
-                  <h5 class="h5">Programming languages</h5>
+                  <h5 class="h5">Programming Languages</h5>
                   <data value="90">90%</data>
                 </div>
-
                 <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%"></div>
+                  <div
+                    class="skill-progress-fill"
+                    style="width: 90%"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="Programming Languages skill level 90%"
+                  ></div>
                 </div>
               </li>
 
@@ -530,9 +722,16 @@
                   <h5 class="h5">Software Development</h5>
                   <data value="80">80%</data>
                 </div>
-
                 <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 80%"></div>
+                  <div
+                    class="skill-progress-fill"
+                    style="width: 80%"
+                    role="progressbar"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="Software Development skill level 80%"
+                  ></div>
                 </div>
               </li>
 
@@ -541,59 +740,69 @@
                   <h5 class="h5">Databases</h5>
                   <data value="90">90%</data>
                 </div>
-
                 <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%"></div>
+                  <div
+                    class="skill-progress-fill"
+                    style="width: 90%"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-label="Databases skill level 90%"
+                  ></div>
                 </div>
               </li>
             </ul>
           </section>
         </article>
-        <!--
-        - # FOLIO
-      -->
 
+        <!-- PORTFOLIO -->
         <article class="portfolio" data-page="portfolio">
           <header>
             <h2 class="h2 article-title">Portfolio</h2>
           </header>
 
           <section class="projects">
-            <ul class="filter-list">
+            <ul
+              class="filter-list"
+              role="list"
+              aria-label="Filter projects by category"
+            >
               <li class="filter-item">
                 <button class="active" data-filter-btn>All</button>
               </li>
-
               <li class="filter-item">
                 <button data-filter-btn>Web development</button>
               </li>
-
               <li class="filter-item">
                 <button data-filter-btn>Applications</button>
               </li>
             </ul>
 
             <div class="filter-select-box">
-              <button class="filter-select" data-select>
-                <div class="select-value" data-selecct-value>
+              <button
+                class="filter-select"
+                data-select
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-label="Filter projects"
+              >
+                <div class="select-value" data-select-value>
                   Select category
                 </div>
-
                 <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
                 </div>
               </button>
 
-              <ul class="select-list">
-                <li class="select-item">
+              <ul class="select-list" role="listbox">
+                <li class="select-item" role="option">
                   <button data-select-item>All</button>
                 </li>
-
-                <li class="select-item">
+                <li class="select-item" role="option">
                   <button data-select-item>Web development</button>
                 </li>
-
-                <li class="select-item">
+                <li class="select-item" role="option">
                   <button data-select-item>Applications</button>
                 </li>
               </ul>
@@ -608,21 +817,22 @@
                 <a
                   href="https://pranav-kasana.github.io/Space-Odyssey/"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Space-Odyssey web development project"
                 >
                   <figure class="project-img">
-                    <div class="project-item-icon-box">
+                    <div class="project-item-icon-box" aria-hidden="true">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-
                     <img
-                      src=".\Assets\Portfolio\Space-Odyssey.png"
-                      alt="Space-Odyssey"
+                      src="./Assets/Portfolio/Space-Odyssey.png"
+                      alt="Space-Odyssey project screenshot"
                       loading="lazy"
+                      width="600"
+                      height="400"
                     />
                   </figure>
-
                   <h3 class="project-title">Space-Odyssey</h3>
-
                   <p class="project-category">Web development</p>
                 </a>
               </li>
@@ -635,21 +845,22 @@
                 <a
                   href="https://github.com/pranav-kasana/Spam-SMS-Classification-NLP"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Spam SMS Classification NLP project on GitHub"
                 >
                   <figure class="project-img">
-                    <div class="project-item-icon-box">
+                    <div class="project-item-icon-box" aria-hidden="true">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-
                     <img
                       src="Assets/Portfolio/SMS.jpeg"
-                      alt="Spam-SMS-Classification-NLP"
+                      alt="Spam SMS Classification NLP project screenshot"
                       loading="lazy"
+                      width="600"
+                      height="400"
                     />
                   </figure>
-
-                  <h3 class="project-title">Spam-SMS-Classification-NLP</h3>
-
+                  <h3 class="project-title">Spam SMS Classification — NLP</h3>
                   <p class="project-category">Machine Learning</p>
                 </a>
               </li>
@@ -657,10 +868,7 @@
           </section>
         </article>
 
-        <!--
-      - #CONTACT
-    -->
-
+        <!-- CONTACT — form removed, clean contact card with email + LinkedIn only -->
         <article class="contact" data-page="contact">
           <header>
             <h2 class="h2 article-title">Contact</h2>
@@ -669,17 +877,60 @@
           <section class="about-text">
             <p>
               I am actively seeking opportunities to connect with like-minded
-              individuals, collaborate on meaningful projects, and contribute my
-              knowledge and skills to the tech industry. Feel free to connect
-              with me to discuss potential collaborations, research
-              opportunities, or career paths!
+              individuals, collaborate on meaningful projects, and contribute to
+              the tech industry. The best ways to reach me are below — I
+              typically respond within 24 hours.
             </p>
+          </section>
+
+          <section class="contact-links">
+            <ul class="contact-card-list">
+              <li class="contact-card-item">
+                <div class="icon-box">
+                  <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+                <div class="contact-card-info">
+                  <p class="contact-card-label">Email me at</p>
+                  <a
+                    href="mailto:pranavrkasana@gmail.com"
+                    class="contact-card-link"
+                    aria-label="Send email to pranavrkasana@gmail.com"
+                  >
+                    pranavrkasana@gmail.com
+                  </a>
+                </div>
+              </li>
+
+              <li class="contact-card-item">
+                <div class="icon-box">
+                  <ion-icon
+                    name="logo-linkedin"
+                    aria-hidden="true"
+                    title=""
+                  ></ion-icon>
+                </div>
+                <div class="contact-card-info">
+                  <p class="contact-card-label">Connect on LinkedIn</p>
+                  <a
+                    href="https://www.linkedin.com/in/pranavkasana/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-card-link"
+                    aria-label="Visit LinkedIn profile (opens in new tab)"
+                  >
+                    linkedin.com/in/pranavkasana
+                  </a>
+                </div>
+              </li>
+            </ul>
           </section>
 
           <section class="mapbox" data-mapbox>
             <figure>
+              <!-- FIX: iframe title attribute for screen readers -->
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24158.899570039653!2d-74.1661580813555!3d40.74582384835726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2537c4d36a5a1%3A0xe1c10f3b482ee935!2sHarrison%2C%20NJ%2007029%2C%20USA!5e0!3m2!1sen!2sus!4v1707231023456!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.05658822!2d78.24323!3d17.41236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sin!4v1707231023456!5m2!1sen!2sin"
+                title="Map showing Hyderabad, Telangana, India"
                 width="600"
                 height="450"
                 style="border: 0"
@@ -693,13 +944,7 @@
       </div>
     </main>
 
-    <!--
-    - custom js link
-  -->
     <script src="script.js"></script>
-    <!--
-    - ionicon link
-  -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
